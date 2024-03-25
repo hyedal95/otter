@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body {
+  font: normal 14px/1 "Montserrat", "Noto Sans", "Roboto";
+  color: #626262;
+  background: #fff;
+  cursor: url(../images/커서.png);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #626262;
+  text-decoration: none;
+}
+
+header, main, footer, section, nav, aside, article {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: normal;
+}
+
+i, em, address {
+  font-style: normal;
+}
+
+.hide {
+  display: none;
+}
+
+.blind {
+  display: block;
+  text-indent: -2000px;
+  overflow: hidden;
+}

@@ -1,0 +1,1218 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+#wrap {
+    width: 100%; 
+    display: flex; 
+    flex-flow: row wrap;
+    // 모달창 갤러리
+    .modal {
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0,0,0,0.5);
+        >.wrap {
+            width: 100%; 
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >.container{
+                width: 800px; 
+                height: 800px;
+                >img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    // 헤더영역
+    #header{
+        border-right: 1px solid #ddd;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 250px; 
+        height: 100vh;
+        background-color: #fff;
+        // 헤더 로고
+        .top{
+            width: 100%;
+            height: 150px;
+            a{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 100%; height: auto;
+                    background-size: cover;
+                }
+            }
+        }
+        // 헤더의 네비게이션바
+        .bottom{
+            width: 100%;
+            height: calc(100% - 150px);
+            padding: 10px;
+            #nav{
+                width: 100%;
+                height: 550px;
+                ul{
+                    width: 100%;
+                    height: 100%;
+                    li{
+                        margin: 10px 0;
+                        width: 100%;
+                        height: 70px;
+                        background-color: aliceblue;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        a{
+                            font-size: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &:hover{
+                                text-decoration-color: #ef106e;
+                                text-decoration-line: line-through;
+                                color: #333;
+                            }
+                            &.on{
+                                text-decoration-color: #ef106e;
+                                text-decoration-line: line-through;
+                                color: #333;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 메인영역
+    #main{
+        position: relative;
+        top:0;
+        left: 250px;
+        width: calc(100% - 250px); 
+        height: 740vh;
+        // 메인세션공통영역
+        section{
+            width: 100%; 
+            height: 740vh;
+        }
+        // 섹션1
+        #section1{
+            width: 100%; 
+            height: 100vh; 
+            background-color: #c8c;
+            border-bottom: 1px solid #333;
+            > .container {
+                width: 100%;
+                height: 100%;
+                >.content {
+                    height: 100%;
+                    position: relative;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    user-select: none;
+                    >.slide-container {
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        position: relative;
+                        z-index: 1;
+                        cursor: grab;
+                        .slide-content {
+                            width: 100%;
+                            height: 100%;
+                            .slide-wrap {
+                                width: 500%;
+                                height: 100%;
+                                display: flex;
+                                margin-left: -100%;
+                                position: relative;
+                                left: 0%;
+                                .slide {
+                                    width: 100%;
+                                    height: 100%;
+                                    .img-box {
+                                        width: 100%;
+                                        height: 100%;
+                                        background: url() no-repeat 50% 50%;
+                                        background-size: cover;
+                                    }
+                                    &.slide01{
+                                        .img-box {
+                                        background-image: url(../images/메인/섹션1/해달2.png);
+                                        }
+                                    }
+                                    &.slide02{
+                                        .img-box {
+                                        background-image: url(../images/메인/섹션1/해달3.png);
+                                        }
+                                    }
+                                    &.slide03{
+                                        .img-box {
+                                        background-image: url(../images/메인/섹션1/해달4.png);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 버튼클릭박스
+                    >.page-btn-box {
+                        position: absolute;
+                        bottom: 30px;
+                        left: 0;
+                        width: 100%;
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        z-index: 2;
+                        .page-container {
+                            display: flex;
+                            align-items: center;
+                            span {
+                                display: flex;
+                                margin: 0 8px;
+                                a {
+                                    width: 12px;
+                                    height: 12px;
+                                    border: 1px solid transparent;
+                                    background-color: rgba(255, 255, 255, 0.4);
+                                    border-radius: 50%;
+                                    margin: 0 10px;
+                                    &.on {
+                                        width: 12px;
+                                        height: 12px;
+                                        border: 3px solid #fff;
+                                        background: rgba(255, 255, 255, 0.1);
+                                        transform: scale(1.6);
+                                        transition: all 0.3s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 왼쪽화살표
+                    >.slide-left-arrow {
+                        z-index: 3;
+                        position: absolute;
+                        top: 50%;
+                        left: 30px;
+                        margin-top: -30px;
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: url(../images/icon_left_circle_gray.svg) no-repeat 0 0;
+                            text-indent: -100px;
+                            overflow: hidden;
+                            &:hover {
+                                background-image: url(../images/icon_left_circle_purple.svg);
+                            }
+                        }
+                    }
+                    // 오른쪽화살표
+                    >.slide-right-arrow {
+                        z-index: 5;
+                        position: absolute;
+                        top: 50%;
+                        right: 30px;
+                        margin-top: -30px;
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: url(../images/icon_left_circle_gray.svg) no-repeat 0 0;
+                            text-indent: -100px;
+                            overflow: hidden;
+                            transform: rotate(180deg); 
+                            &:hover {
+                                background-image: url(../images/icon_left_circle_purple.svg);
+                            }
+                        }
+                    }
+                    //네임박스
+                    > .name-box{
+                        position: absolute;
+                        z-index: 5;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -250px;
+                        margin-left: -600px;
+                        width: 800px; 
+                        height: 500px; 
+                        background: transparent;
+                        >h2{
+                            font-size: 80px;
+                            font-weight: 750;
+                            color: #636363;
+                            -webkit-text-stroke: 1px rgb(235, 235, 235);
+                            width: 100%; line-height: 100%;
+                        }
+                        >h3{
+                            font-size: 100px;
+                            font-weight: 600;
+                            color:  #ececec;
+                            -webkit-text-stroke: 2px rgb(119, 119, 119);
+                            width: 100%;line-height: 150%;
+                        }
+                        >.job-box{
+                            display: inline-flex;
+                            background-color: #000;
+                            width: 250px;
+                            height: 30px;
+                            p{
+                                color: #fff;
+                                font-size: 20px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }    
+                    }
+                }
+            }
+        }
+        // 섹션2
+        #section2{
+            border-bottom: 1px solid #333;
+            width: 100%; 
+            height: 80vh; 
+            background-image: url(../images/메인/섹션2/해달1-1.png);
+            .left{
+                width: 50%; 
+                height: 100%;
+                .container{
+                    width: 100%; 
+                    height: 100%; 
+                    padding: 50px 100px;
+                    .title{
+                        width: 100%; height: 50px;
+                        transform: translateX(200px);
+                        opacity: 0;
+                        &.on{
+                            animation: ani_s2_title 3s ease-in-out both;  
+                        }
+                        @keyframes ani_s2_title {
+                            0% {
+                                transform: translateX(200px);
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                        }
+                        h2{
+                            font-size: 30px; font-weight: 600;
+                        }
+                    }
+                    .content{
+                        width: 100%; 
+                        height: calc(100% - 50px);
+                        .top{
+                            width: 100%; 
+                            height: 150px; 
+                            padding: 10px 20px;
+                            p{
+                                font-size: 18px; 
+                                color: #000; 
+                                font-weight: 500; 
+                                line-height: 150%;
+                            }
+                        }
+                        .center{
+                            user-select: none;
+                            width: 100%; 
+                            height: 250px; 
+                            padding: 0 20px;
+                            ul{
+                                width: 100%; 
+                                height: 100%; 
+                                background-color: #fff;
+                                li{
+                                    border-bottom: 1px solid #ddd;
+                                    width: 100%; height: 50px;
+                                    a{
+                                        display: flex;
+                                        width: 100%; 
+                                        height: 100%; 
+                                        font-size: 14px; 
+                                        color: #333;
+                                        span{
+                                            font-weight: 500;
+                                            display: flex;
+                                            justify-content: left;
+                                            align-items: center;
+                                            width: 30%; 
+                                            height: 100%;
+                                        }
+                                        p{
+                                            display: flex;
+                                            justify-content: left;
+                                            align-items: center;
+                                            width: 70%; height: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .bottom{
+                            margin-top: 20px;
+                            width: 100%; 
+                            height: 50px; 
+                            display: flex; 
+                            justify-content: center; 
+                            align-items: center;
+                            button{
+                                border: 0;
+                                background-color: #c4c4c4;
+                                font-size: 14px;
+                                color: #000;
+                                font-weight: 600;
+                                width: 150px; 
+                                height: 100%;
+                                &:hover{
+                                    background-color: #333;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right{
+                width: 50%; 
+                height: 100%;
+            }
+        }
+        // 섹션3
+        #section3{
+            border-bottom: 1px solid #333;
+            width: 100%; 
+            height: 80vh; 
+            background-image: url(../images/메인/섹션3/그림3.png);
+            .top{
+                width: 100%; 
+                height: 70%;
+                .container{
+                    width: 100%; 
+                    height: 100%; 
+                    padding: 50px 100px;
+                    .title{
+                        width: 100%; height: 50px;
+                        transform: translateX(200px);
+                        opacity: 0;
+                        &.on{
+                            animation: ani_s3_title 3s ease-in-out both;
+                            }
+                            @keyframes ani_s3_title {
+                            0% {
+                                transform: translateX(200px);
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                        }
+                        h2{
+                            font-size: 30px; 
+                            font-weight: 600;
+                        }
+                    }
+                    .content{
+                        width: 100%; 
+                        height: calc(100% - 50px);
+                        >.skill-box{
+                            width: 100%; 
+                            height: 100%;
+                            > .top{
+                                width: 100%; 
+                                height: 50%; 
+                                padding: 10px;
+                                >ul{
+                                    width: 100%; 
+                                    height: 50%; 
+                                    display: flex;
+                                    > li{
+                                        width: 33.333%; 
+                                        height: 100%;
+                                        display: flex;
+                                        >img{
+                                            width: 20%; 
+                                            height: auto;
+                                        }
+                                        >.li-box{
+                                            width: 70%;
+                                            height: 100%;
+                                        }    
+                                    }
+                                }
+                            }
+                            > .bottom{
+                                width: 100%; 
+                                height: 50%; 
+                                padding: 10px;
+                                >ul{
+                                    width: 100%; 
+                                    height: 50%; 
+                                    display: flex;
+                                    > li{
+                                        width: 33.333%; 
+                                        height: 100%;
+                                        display: flex;
+                                        >img{
+                                            width: 20%; 
+                                            height: auto;
+                                        }
+                                        >.li-box{
+                                            width: 70%;
+                                            height: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+            >.bottom{
+                width: 100%; 
+                height: 30%; 
+                background-color: #fcb900;
+                >.container{
+                    width: 100%; 
+                    height: 100%; 
+                    padding: 50px 100px;
+                    ul{
+                        width: 100%; 
+                        height: 100%; 
+                        display: flex;
+                        li{
+                            width: 25%; 
+                            height: 100%;
+                            span{
+                                width: 100%; 
+                                height: 50%; 
+                                font-size: 50px; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center; 
+                                color: #000;
+                            }
+                            p{
+                                width: 100%; 
+                                height: 50%; 
+                                font-size: 20px; 
+                                display: flex; 
+                                align-items: center; 
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 섹션4
+        #section4{
+            border-bottom: 1px solid #333;
+            width: 100%; height: 100vh;
+            .top{
+                width: 100%; 
+                height: 50vh;
+                .container{
+                    width: 100%; 
+                    height: 100%; 
+                    padding: 50px 100px;
+                    .title{
+                        width: 100%; height: 50px;
+                        transform: translateX(200px);
+                        opacity: 0;
+                        &.on{
+                            animation: ani_s4_title 3s ease-in-out both;
+                            }
+                            @keyframes ani_s4_title {
+                            0% {
+                                transform: translateX(200px);
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                        }
+                        h2{
+                            font-size: 30px; 
+                            font-weight: 600;
+                        }
+                    }
+                    .content{
+                        width: 100%; 
+                        height: calc(100% - 50px);
+                        background-color: #c8c; 
+                        padding: 100px 50px;
+                        .career-box{
+                            width: 100%; 
+                            height: 100%; 
+                            display: flex;
+                            .col{
+                                width: 25%; 
+                                height: 100%; 
+                                margin-right: 100px;
+                                .row{
+                                    width: 100%; 
+                                    height: 50%; 
+                                    position: relative;
+                                    h2{ 
+                                        color: #000;
+                                        font-size: 15px; 
+                                        font-weight: 600;
+                                    }
+                                    h3{ 
+                                        font-size: 13px;
+                                    }
+                                    .null-box{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        margin-top: 15px;
+                                        width: 100px; 
+                                        height: 30px; 
+                                        background-color: #000;
+                                        p{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            color: #fff;
+                                        }
+                                    }
+                                    &:first-child{
+                                        border-bottom: 1px solid #000;
+                                        margin-bottom: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom{
+                width: 100%; 
+                height: 50vh; 
+                img{
+                    width: 100%; 
+                    height: 100%;
+                }
+            }
+        }
+        // 섹션5
+        #section5{
+            border-bottom: 1px solid #333;
+            width: 100%; height: 100vh;
+            .top{
+                width: 100%; 
+                height: 100vh; 
+                .container{
+                    width: 100%; 
+                    height: 100%; 
+                    padding: 50px 100px;
+                    .title{
+                        width: 100%; 
+                        height: 50px;
+                        transform: translateX(200px);
+                        opacity: 0;
+                        &.on{
+                            animation: ani_s5_title 3s ease-in-out both;
+                            }
+                            @keyframes ani_s5_title {
+                            0% {
+                                transform: translateX(200px);
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                        }
+                        h2{
+                            font-size: 30px; 
+                            font-weight: 600;
+                        }
+                    }
+                    .content{
+                        width: 100%; 
+                        height: calc(100% - 50px);
+                        p{
+                            width: 100%; 
+                            height: 60px; 
+                            font-size: 18px;
+                            padding: 10px;
+                            color: #333;
+                            margin-bottom: 20px;
+                        }
+                        >.box1{
+                            border-bottom: 1px solid #fff;
+                            border-top: 1px solid #fff;
+                            width: 100%; 
+                            height: 500px; 
+                            background-color: #fcb900;
+                            display: flex;
+                            >.left{
+                                width: 50%;
+                                height: 100%;
+                                >ul{
+                                    width: 100%; 
+                                    height: 100%;
+                                    >li{
+                                        width: 100%;
+                                        height: 50%;
+                                        display: flex;
+                                        >span{
+                                            width: 100px; 
+                                            height: 100%; 
+                                            font-size: 50px; 
+                                            text-align: center; 
+                                            display: flex; 
+                                            justify-content: center; 
+                                            align-items: center;
+                                        }
+                                        >.text-box{
+                                            width: calc(100% - 30px); 
+                                            text-align: center; 
+                                            padding: 30px 0;
+                                            h3{
+                                                width: 100%; 
+                                                height: 50px;
+                                                font-size: 30px; 
+                                                color: #000; 
+                                                font-weight: 600;
+                                            }
+                                            p{
+                                                width: 100%; 
+                                                height: 30px;
+                                                font-size: 15px;
+                                                color: #333; 
+                                                font-weight: 500;
+                                            }
+                                            i{
+                                                width: 100%; 
+                                                height: 30px;
+                                                font-size: 15px; 
+                                                color: #333; 
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    } 
+                                }
+                            }
+                            >.right{
+                                width: 50%; 
+                                height: 100%;
+                                >ul{
+                                    width: 100%; 
+                                    height: 100%;
+                                    >li{
+                                        width: 100%; 
+                                        height: 50%; 
+                                        display: flex;
+                                        >span{
+                                            width: 100px; 
+                                            height: 100%; 
+                                            font-size: 50px; 
+                                            text-align: center; 
+                                            display: flex; 
+                                            justify-content: center; 
+                                            align-items: center;
+                                        }
+                                        >.text-box{
+                                            width: calc(100% - 30px); 
+                                            text-align: center; 
+                                            padding: 30px 0;
+                                            h3{
+                                                width: 100%; 
+                                                height: 50px; 
+                                                font-size: 30px; 
+                                                color: #000; 
+                                                font-weight: 600;
+                                            }
+                                            p{
+                                                width: 100%; 
+                                                height: 30px; 
+                                                font-size: 15px; 
+                                                color: #333; 
+                                                font-weight: 500;
+                                            }
+                                            i{
+                                                width: 100%; 
+                                                height: 30px;
+                                                font-size: 15px; 
+                                                color: #333; 
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                        >.box2{
+                            width: 100%; 
+                            height: 100px;
+                            >img{
+                                width: 100px; 
+                                height: 100px; 
+                                padding: 5px;
+                            }
+                            >strong{
+                                font-size: 30px;
+                                width: calc(100% - 60px); height: 100%; 
+                                color: #333;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        //섹션6 
+        #section6{
+            border-bottom: 1px solid #333;
+            width: 100%; 
+            height: 100vh; 
+            background-color: #fff;
+            .container{
+                width: 100%; 
+                height: 100%; 
+                padding: 50px 100px;
+                .title{
+                    width: 100%; 
+                    height: 50px; 
+                    transform: translateX(200px);
+                    opacity: 0;
+                    &.on{
+                        animation: ani_s6_title 3s ease-in-out both;
+                        }
+                        @keyframes ani_s6_title {
+                        0% {
+                          transform: translateX(200px);
+                          opacity: 0;
+                        }
+                        100% {
+                          transform: translateX(0);
+                          opacity: 1;
+                        }
+                    }
+                    h2{
+                        font-size: 30px; 
+                        font-weight: 600;
+                    }
+                }
+                .content{
+                    padding-top: 50px;
+                    width: 100%; 
+                    height: calc(100% - 50px); 
+                    display: flex;
+                    .left{
+                        width: 200px; 
+                        height: calc(100% - 50px); 
+                        margin-right: 50px;
+                        #nav2{
+                            width:100%; 
+                            height: 200px;
+                            ul{
+                                width: 100%; 
+                                height: 100%;
+                                li{
+                                    width: 100%; 
+                                    height: 50px;
+                                    a{
+                                        color: #000;
+                                        width: 100%; 
+                                        height: 100%; 
+                                        font-size: 20px; 
+                                        display: flex; 
+                                        justify-content: center; 
+                                        align-items: center;
+                                        &:hover{
+                                            text-decoration-color: #ef106e;
+                                            text-decoration-line: line-through;
+                                            color: #333;
+                                        }
+                                        &.on{
+                                            text-decoration-color: #ef106e;
+                                            text-decoration-line: line-through;
+                                            color: #333;
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                    .right{
+                        width: calc(100% - 250px); 
+                        height: calc(100% - 50px);
+                        .gallery-box{
+                            width: 100%; 
+                            margin: 0 0 0 -11px;
+                            ul{
+                                width: 100%;
+                                display: flex;
+                                flex-flow: row wrap;
+                                li {
+                                    width: 25%;
+                                    .col-gap {
+                                        width: auto;
+                                        margin: 0 0 11px 11px;
+                                        overflow: hidden;
+                                        a {
+                                            display: block;
+                                            width: 100%;
+                                            figure {
+                                                width: 100%;
+                                                img {
+                                                    width: 100%;
+                                                    transition: all 0.3s;
+                                                    &:hover {
+                                                        transform: scale(1.1);
+                                                        opacity: 0.2;
+                                                        cursor: url(../images/icon-zoom.png), auto;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+        //섹션7 ㅁ
+        #section7{
+            border-bottom: 1px solid #333;
+            width: 100%; 
+            height: 100vh; 
+            background-color: #fff;
+            .container{
+                width: 100%; 
+                height: 100%; 
+                padding: 50px 100px; 
+                .title{
+                    width: 100%; height: 50px;
+                    transform: translateX(200px);
+                    opacity: 0;
+                    &.on{
+                        animation: ani_s7_title 3s ease-in-out both;  
+                    }
+                    @keyframes ani_s7_title {
+                        0% {
+                        transform: translateX(200px);
+                        opacity: 0;
+                        }
+                        100% {
+                        transform: translateX(0);
+                        opacity: 1;
+                        }
+                    }
+                    h2{
+                        font-size: 30px; font-weight: 600;
+                    }
+                }
+                .content{
+                    width: 100%; 
+                    height: calc(100% - 50px);
+                    padding: 50px;
+                    .col{
+                        width: 100%; 
+                        height: 50%;
+                        display: flex;
+                        margin: 10px;
+                        .row{
+                            width: 25%;
+                            height: 100%;
+                            border: 1px solid #555;
+                            margin: 0 10px;
+                            .ani-text{
+                                width: 100%; 
+                                height: 70%;
+                                padding: 20%;
+                                transform: scaleY(100px);
+                                opacity: 0.5;
+                                transition: all 3s;
+                                color: #000;
+                                &:hover{
+                                    animation: ani_s7_text 3s ease-in-out both;
+                                    transform: scale(1.5);
+                                    color: #000;
+                                    cursor: pointer;
+                                }
+                                @keyframes ani_s7_text {
+                                    0%{
+                                    transform: scaleY(100px);
+                                    opacity: 0;
+                                    }
+                                    100%{
+                                    transform: scaleY(0px);
+                                    opacity: 1;
+                                    }
+                                
+                                }
+                                blockquote{
+                                    text-align: center;
+                                    font-size: 20px;
+                                    line-height: 110%;
+                                    font-weight: 600;
+                                    color: #000;
+                                }
+                            }
+                            span{
+                                width: 100%; height: 30%;
+                                display: flex; 
+                                justify-content: center;
+                                align-items: center;
+                                p{
+                                    font-size: large; 
+                                    font-weight: 600;
+                                }
+                            }
+                            &.row1{
+                                background: linear-gradient(45deg,lightCyan 30%, deepSkyBlue);
+                            }
+                            &.row2{
+                                background: linear-gradient(45deg,lightCyan 30%, deepSkyBlue);
+                            }
+                            &.row3{
+                                background: linear-gradient(45deg,lightCyan 30%, deepSkyBlue);
+                            }
+                            &.row4{
+                                background: linear-gradient(45deg,lightCyan 30%, deepSkyBlue);
+                            }
+                            &.row5{
+                                background: linear-gradient(rgb(234, 234, 223) 30%, rgb(222, 229, 22), yellow);
+                            }
+                            &.row6{
+                                background: linear-gradient(rgb(234, 234, 223) 30%, rgb(222, 229, 22), yellow);
+                            }
+                            &.row7{
+                                background: linear-gradient(rgb(234, 234, 223) 30%, rgb(222, 229, 22), yellow);
+                            }
+                            &.row8{
+                                background: linear-gradient(rgb(234, 234, 223) 30%, rgb(222, 229, 22), yellow);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //섹션8 ㅁ
+        #section8{
+            border-bottom: 1px solid #333;
+            width: 100%; 
+            height: 80vh; 
+            background-image: url(../images/메인/섹션7/해달5.png);
+            .container{
+                width: 100%; 
+                height: 100%;
+                padding: 50px 100px;
+                .title{
+                    width: 100%; height: 50px;
+                    transform: translateX(200px);
+                    opacity: 0;
+                    &.on{
+                        animation: ani_s8_title 3s ease-in-out both;  
+                    }
+                    @keyframes ani_s8_title{
+                        0% {
+                          transform: translateX(200px);
+                          opacity: 0;
+                        }
+                        100% {
+                          transform: translateX(0);
+                          opacity: 1;
+                        }
+                    }
+                    h2{
+                        font-size: 30px; font-weight: 600;
+                    }
+                      
+                }
+                .content{
+                    width: 100%; 
+                    height: calc(100% - 50px); 
+                    max-width: 700px;  
+                    margin: 0 10% 0 0;
+                    .top{
+                        width: 100%;
+                        height: 100px; 
+                        margin-bottom: 20px;
+                        ul{
+                            width: 100%; 
+                            height: 100%; 
+                            display: flex; 
+                            justify-content: center; 
+                            align-items: center;
+                            li{
+                                width: 50%; 
+                                height: 100%;
+                                a{
+                                    display: flex;
+                                    img{
+                                        width: 50px; 
+                                        margin-right: 20px;
+                                    }
+                                    span{
+                                        width: calc(100% - 50px); 
+                                        height: 100%; 
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .bottom{
+                        width: 100%; 
+                        height: calc(100% - 50px);
+                        form{
+                            width: 100%; 
+                            height: 100%;
+                            .enter-box{
+                                width: 100%; 
+                                height: 100%;
+                                ul{
+                                    width: 100%; 
+                                    height: 400px;
+                                    li{
+                                        width: 100%;
+                                        height: 60px;
+                                        margin-bottom: 10px;
+                                        .center{
+                                            width: 100%; 
+                                            height: 100%;
+                                            input{
+                                                padding-left: 10px;
+                                                width: 100%; height: 100%;
+                                            }
+                                            select{
+                                                padding-left: 10px;
+                                                font-size: 18px;
+                                                width: 100%; height: 100%;
+                                                option{
+                                                    width: 100%; height: 100%;
+                                                    font-size: 20px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .submit-box{
+                                    width: 100%; 
+                                    height: 50px;
+                                    display: flex; 
+                                    justify-content: center; 
+                                    align-items: center; 
+                                    button{
+                                        width: 200px; 
+                                        height: 100%; 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    #footer{
+        position: relative;
+        background-color: #626262;
+        top: 0;
+        left: 250px;
+        width: calc(100% - 250px); height: 200px;
+        .container{
+            width: 100%; 
+            height: 100%; 
+            padding: 50px 100px;
+            .title{
+                width: 100%; 
+                height: 50%; 
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    width: 180px; 
+                    height: 100%; 
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        li{
+                            width: 33.333%; 
+                            margin: 0 10px;
+                            a{
+                                width: 100%;
+                                height: 100%;
+                                img{
+                                    display: flex; 
+                                    align-items: center; 
+                                    justify-content: center;
+                                    width: 80%; height: auto;
+                                    transition: all 0.3s;
+                                    &:hover{
+                                        transform: scale(1.2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .right{
+                    width:250px; 
+                    height: 100%; 
+                    background: #626262;
+                    a{
+                        width: 100%; 
+                        height: 100%;
+                        img{
+                            filter: grayscale(0);
+                            opacity: 0.1;
+                            width: 100%; 
+                            height: 100%;
+                        }
+                            
+                    }
+                }
+            }
+            .content{
+                width: 100%; 
+                height: 50%;
+                p{
+                    color: #fff;
+                    width: 100%; 
+                    height:20px; 
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

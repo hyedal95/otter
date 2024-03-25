@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노도연 홈페이지</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/lib/jquery-1.9.0.min.js"></script>
+    <script src="./js/lib/vue.js"></script>
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        
+
+        <!-- 모달창 -->
+        <div class="modal" v-show="isShow" @click="modalClose">
+            <div class="wrap">
+                <div class="container">
+                    <!-- 모달창 이미지 클릭하면 다음 이미지 슬라이드 -->
+                    <img :src="imgSrc" alt="이미지" @click.stop="nextImage">
+                </div>
+            </div>
+        </div>
+
+        <header id="header">
+            <div class="top">
+                <a href=""><img src="./images/logo.png" alt="로고"></a>
+            </div>
+            <div class="bottom">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#section2" class="main-btn" title="ABOUT ME">ABOUT ME</a></li>
+                        <li><a href="#section3" class="main-btn" title="SKILLS">SKILLS</a></li>
+                        <li><a href="#section4" class="main-btn" title="EDUCATION">EMPLOYMENT</a></li>
+                        <li><a href="#section5" class="main-btn" title="EMPLOYMENT">EDUCATION </a></li>
+                        <li><a href="#section6" class="main-btn" title="PORTFOLIO">PORTFOLIO</a></li>
+                        <li><a href="#section7" class="main-btn" title="BLOG">BLOG</a></li>
+                        <li><a href="#section8" class="main-btn" title="CONTACT">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main">
+            <!-- 홈화면 메인슬라이드 -->
+            <section id="section1">
+                <!-- 메인슬라이드영역 (제네시스 방식 ) -->
+                <div class="container">
+                    <div class="content">  <!-- 터치스와이프 -->
+                        <div class="slide-container">
+                            <dlv class="slide-content">
+                                <ul class="slide-wrap">
+                                    <li class="slide slide03">
+                                        <div class="img-box"></div>
+                                    </li>
+                                    <li class="slide slide01">
+                                        <div class="img-box"></div>
+                                    </li>
+                                    <li class="slide slide02">
+                                        <div class="img-box"></div>
+                                    </li>
+                                    <li class="slide slide03">
+                                        <div class="img-box"></div>
+                                    </li>
+                                    <li class="slide slide01">
+                                        <div class="img-box"></div>
+                                    </li>
+                                </ul>
+                            </dlv>
+                        </div>
+                        <!-- 버튼영역 -->
+                        <!-- 1. 포지션너비 100%  -->
+                        <div class="page-btn-box">
+                            <!-- 2. 인라인요소 가운데 정렬 -->
+                            <div class="page-container">
+                                <span>
+                                    <a href="#" class="page-btn page-btn01 blind on">페이지버튼01</a> 
+                                    <a href="#" class="page-btn page-btn02 blind">페이지버튼02</a>
+                                    <a href="#" class="page-btn page-btn03 blind">페이지버튼03</a>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- 화살표 영역 -->
+                        <!-- 슬라이드 좌우 화살버튼 -->
+                        <div class="slide-left-arrow">
+                            <a href="#" class="slide-left-arrow-btn">좌측화살버튼</a>
+                        </div>
+                        <div class="slide-right-arrow">
+                            <a href="#" class="slide-right-arrow-btn">우측화살버튼</a>
+                        </div>
+                        <br>
+                        <!-- 네임박스 -->
+                        <div class="name-box">
+                            <h2>HELLO I'M</h2>
+                            <h3>DOYEON NOH</h3>
+                            <div class="job-box">
+                                <p>FULLSTACK DEVELOPER</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 어바웃미 섹션2 -->
+            <section id="section2">
+                <div class="left">
+                    <div class="container">
+                        <div class="title on">
+                            <h2>ABOUT ME</h2>
+                        </div>
+                        <div class="content">
+                            <div class="top">
+                                <p>
+                                    Hello, I'm a backend and frontend developer<br> 
+                                    I am from Korea.<br>
+                                    I am taking a KDD-based full stack (JAVA, SPRING, VUE) developer training course at Ansan Green Computer Academy.
+                                </p>
+                            </div>
+                            <div class="center">
+                                <ul>
+                                    <li><a href="#"><span>Name:</span><p>Doyeon Noh</p> </a></li>
+                                    <li><a href="#"><span>Email:</span><p>hyedal95@gmail.com</p> </a></li>
+                                    <li><a href="#"><span>Phone:</span><p>010-8291-3711</p> </a></li>
+                                    <li><a href="#"><span>Date of birth:</span><p>5 September 1995</p> </a></li>
+                                    <li><a href="#"><span>Nationality:</span><p>south of korea</p> </a></li>
+                                </ul>
+                            </div>
+                            <div class="bottom">
+                                <button>Download Resume</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right hide">사용안하는 영역</div>
+            </section>
+            <section id="section3">
+                <div class="top">
+                    <div class="container">
+                        <div class="title on">
+                            <h2>SKILLS</h2>
+                        </div>
+                        <div class="content">
+                            <div class="skill-box">
+                                <div class="top">
+                                    <ul>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>PHOTOSHOP</span><p>초급</p></div>
+                                        </li>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>HTML5</span><p>중급</p></div>
+                                        </li>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>CSS</span><p>중급</p></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bottom">
+                                    <ul>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>JAVASCRIPT</span><p>node.js | vue.js | JQuery 학습 중</p></div>
+                                        </li>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>GITHUB</span><p>배포가능</p></div>
+                                        </li>
+                                        <li>
+                                            <img src="./images/메인/임시아이콘.png" alt="">
+                                            <div class="li-box"><span>JAVA</span><p>기초 가능</p></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="container">
+                        <ul>
+                            <li><span>1</span><p>게임개발</p></li>
+                            <li><span>1</span><p>어플개발</p></li>
+                            <li><span>5</span><p>웹개발</p></li>
+                            <li><span>7</span><p>적용들</p></li>
+                        </ul>
+                    </div>
+                </div>                
+            </section>
+            <!-- EMPLOYMENT  섹션4영역-->
+            <section id="section4">
+                <div class="top">
+                    <div class="container">
+                        <div class="title on">
+                            <h2>EMPLOYMENT</h2>
+                        </div>
+                        <div class="content">
+                            <div class="career-box">
+                                <div class="col">
+                                    <div class="row">
+                                        <h2>(주)KMPARK-용인세브란스병원</h2>
+                                        <h3>운영주임</h3>
+                                        <div class="null-box">
+                                            <p>2023-2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p>
+                                            - 신입 교육 및 순찰<br>
+                                            - VIP 의전 <br>
+                                            - 주차운영관리 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <h2>㈜에스엔와이에이치알</h2>
+                                        <h3>세척사원</h3>
+                                        <div class="null-box">
+                                            <p>2018</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p>
+                                            - 파파존스 피자도우 세척 업무
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <h2>양지햇살지역아동센터</h2>
+                                        <h3>튜터</h3>
+                                        <div class="null-box">
+                                            <p>2017</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p>
+                                            - ITQ 파워포인트 초등학생 수업진행<br>
+                                            - 교육, 식사, 문화예술 동행 도우미
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <h2>양지햇살지역아동센터</h2>
+                                        <h3>튜터</h3>
+                                        <div class="null-box">
+                                            <p>2016</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p>
+                                            - 교육, 식사, 문화예술 동행 도우미<br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom"><img src="./images/메인/섹션4/사진1.png" alt=""></div>
+            </section>
+            <!-- 에듀케이션 -->
+            <section id="section5">
+                <div class="top">
+                    <div class="container">
+                        <div class="title on">
+                            <h2>EDUCATION</h2>
+                        </div>
+                        <div class="content">
+                            <p>한번 사는 인생, 개발자로 살아가보자!</p>
+                            <div class="box1">
+                                <div class="left">
+                                    <ul>
+                                        <li><span>1</span><div class="text-box"><h3>한국방송통신대학교</h3><p>컴퓨터과학과
+                                        </p><i>2021-2024 재학중</i></div></li>
+                                        <li><span>3</span><div class="text-box"><h3>그린컴퓨터아카데미 안산캠퍼스</h3><p>기업맞춤형KDD기반 개발자과정</p><i>2024.01~07</i></div></li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li><span>2</span><div class="text-box"><h3>이젠컴퓨터아카데미 안산캠퍼스</h3><p>파이썬기초과정</p><i>2022</i></div></li>
+                                        <li><span>4</span><div class="text-box"><h3>취업을하자</h3><p>개발자</p><i>2024</i></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <img src="./images/icon.png" alt="">
+                                <strong>배우고 때로 익히면 또한 기쁘지 아니한가.-공자-
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 포트폴리오 -->
+            <section id="section6">
+                <div class="container">
+                    <div class="title on">
+                        <h2>PORTFOLIO</h2>
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <nav id="nav2">
+                                <ul>
+                                    <li class="sub-btn"><a href="#">ALL </a></li>
+                                    <li class="sub-btn"><a href="#">APP </a></li>
+                                    <li class="sub-btn"><a href="#">WEB </a></li>
+                                    <li class="sub-btn"><a href="#">GAME</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="right">
+                            <div class="gallery-box">
+                                <ul>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <!-- 이미지 클릭시 모달창 띄우기  -->
+                                                    <img :src="imgSrc" alt="이미지" @click="modalOpen">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img2.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img3.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img4.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img5.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img6.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img7.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-gap">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="./images/메인/섹션6/img8.webp" alt="">
+                                                </figure>                                            
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- RECENT BLOG -->
+            <section id="section7">
+                <div class="container">
+                    <div class="title on">
+                        <h2>RECENT BLOG</h2>
+                    </div>
+                    <div class="content">
+                        <div class="col">
+                            <div class="row row1">
+                                <div class="ani-text">
+                                    <blockquote>"풋내기가 상급자로 가는 과정은 자신의 부족함을 아는 것이 그 첫번째."</blockquote>
+                                </div>
+                                <span><p>슬램덩크 中</p></span>
+                            </div>
+                            <div class="row row2">
+                                <div class="ani-text">
+                                    <blockquote>"생각대로 되지 않는다는 것은 정말 멋지네요. 생각지도 못했던 일이 일어나는 걸요."</blockquote>
+                                </div>
+                                <span><p>빨간머리 앤 中</p></span>
+                            </div>
+                            <div class="row row3">
+                                <div class="ani-text">
+                                    <blockquote>"싫다든가, 돌아가고 싶다고 말하고 싶어질 때도 있지만 괴로워도 참고 기회가 오기를 기다리는 거야."</blockquote>
+                                </div>
+                                <span><p>센과 치히로의 행방불명 中</p></span>
+                            </div>
+                            <div class="row row4">
+                                <div class="ani-text">
+                                    <blockquote>"의미 없는 것을 잔뜩 하는 것이 인생이란다."</blockquote>
+                                </div>
+                                <span><p>마루코는 아홉살 中</p></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row row5">
+                                <div class="ani-text">
+                                    <blockquote>"삶은 실수투성이이다. 우리는 늘 실수를 하지"</blockquote>
+                                </div>
+                                <span><p>주토피아 中</p></span>
+                            </div>
+                            <div class="row row6">
+                                <div class="ani-text">
+                                    <blockquote>"매일 행복하진 않지만 행복한 일은 매일 있어"</blockquote>
+                                </div>
+                                <span><p>곰돌이 푸 中</p></span>
+                            </div>
+                            <div class="row row7">
+                                <div class="ani-text">
+                                    <blockquote>"성공은 공짜로 주어지는 게 아니야 목표를 위해 무엇이든 할 수 있어야 해"</blockquote>
+                                </div>
+                                <span><p>코코 中</p></span>
+                            </div>
+                            <div class="row row8">
+                                <div class="ani-text">
+                                    <blockquote>"아무리 마음이 슬퍼도 계속해서 믿는다면 바라는 꿈이 이루어질거야."</blockquote>
+                                </div>
+                                <span><p>신데렐라 中</p></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 연락 -->
+            <section id="section8">
+                <div class="container">
+                    <div class="title on">
+                        <h2>CONTACT</h2>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <ul>
+                                <li><a href="https://maps.app.goo.gl/iY3ynrBNGiKkdQNt9"><img src="./images/위치.png" alt="위치"><span>그린컴퓨터아카데미 안산캠퍼스 <br>
+                                    경기도 안산시 고잔동 541-1 KR <br>
+                                    동서코아관리사무소 3층</span></a>
+                                </li>
+                                <li><a href="mailto:hyedal95@gmail.com"><img src="./images/이메일.png" alt="이메일"><span>hyedal95@gmail.com</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="bottom">
+                            <form>
+                                <!-- 스크립트에 등록 -->
+                                <div class="enter-box">
+                                    <ul>
+                                        <li>
+                                            <div class="center">
+                                                <input type="text" id="userName" name="userName" maxlength="16" placeholder="*YOUR NAME" v-model.trim="이름">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="center">
+                                                <input type="text" id="userEmail" name="userEmail"  placeholder="*YOUR EMAIL" v-model.trim="이메일">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="center">
+                                                <select class="wpcf7-form-control wpcf7-select" aria-invalid="false" name="menu-438"><option value="WHAT ARE YOU INTERESTED IN?">WHAT ARE YOU INTERESTED IN?</option><option value="Web Developement">Web Developement</option><option value="Mobile Application">Mobile Application</option><option value="Graphics Design">Graphics Design</option><option value="Other">Other</option></select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="center">
+                                                <input type="text" id="userMassage" name="userMassage"  placeholder="YOUR MASSAGE" v-model.trim="메세지">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- 버튼 -->
+                                    <div class="submit-box">
+                                        <button>전송하기</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <div class="title">
+                    <div class="left">
+                        <ul>
+                            <li><a href="#" title="엑스"><img src="./images/엑스.png" alt="엑스"></a></li>
+                            <li><a href="#" title="유튜브"><img src="./images/유튜브.png" alt="유튜브"></a></li>
+                            <li><a href="#" title="링크드인"><img src="./images/링크드인.png" alt="링크드인"></a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <a href="#" title="로고"><img src="./images/logo.png" alt="로고"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>© 2024 NOHDOYEON IS PROUDLY POWERED BY THEMEZAA.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 스크립트 -->
+    <script>
+        const vue =new Vue({
+            data(){
+                return{
+                    imgSrc:"./images/메인/섹션6/img1.webp",
+                    isShow:false,
+                    cnt:1
+                }
+            },
+            methods:{
+                //모달창 열기 메서드
+                modalOpen(){
+                        this.isShow = true;
+                },
+                modalClose(){
+                    this.isShow = false;
+                },
+                nextImage(){
+                    this.cnt = this.cnt+1; //이미지 1번부터8번까지 
+                    if(this.cnt>8){
+                        this.cnt=1
+                    }
+                    this.imgSrc = `./images/메인/섹션6/img${this.cnt}.webp`;
+                }
+
+            }
+        })
+        vue.$mount('#wrap');
+
+    </script>
+</body>
+</html>
+
+
